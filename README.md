@@ -7,8 +7,8 @@ Lớp học phần: 241IS19A01 - [THIẾT KẾ WEB - THỨ 7 CA 2] <br>
 |---------------------|---------------|---------------|
 | Nguyễn Xuân Hoàng      | 25A4041497    |               |
 | Trần Trung Hiệu       | 25A4041501    |               |
-| Nguyễn Trung Tín |   25A4041925  |               |
-| Bùi gia huy      |  25A4041544   |    |
+| Nguyễn Trung Tín |   25A4041925  |        Leader       |
+| Bùi Gia Huy      |  25A4041544   |    |
 
 --Mô tả--
 Nhóm thiết kế một Website cho một thương hiệu bán đồ gia dụng khá nổi tiếng tại Việt Nam<br>
