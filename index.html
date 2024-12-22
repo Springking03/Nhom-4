@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Bán Đồ Gia Dụng</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Cơ bản */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #f8f8f8;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Thanh menu */
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        /* Dropdown cấp 2 ẩn mặc định */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            list-style: none;
+            padding: 0;
+            z-index: 1000;
+        }
+
+        nav ul li ul li {
+            width: 150px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        /* Form tìm kiếm */
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-form input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+
+        .search-form button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .search-form button:hover {
+            background-color: #555;
+        }
+
+        /* Nút đăng nhập */
+        .login-button {
+            margin-left: auto;
+        }
+
+        .login-button img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .login-button img:hover {
+            opacity: 0.8;
+        }
+
+        /* Banner */
+        .banner {
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .banner h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Sản phẩm */
+        .products {
+            padding: 20px;
+        }
+
+        .products h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-item {
+            text-decoration: none;
+            color: #333;
+            width: calc(33.333% - 20px);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        .product-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-item h3 {
+            font-size: 1.2rem;
+            margin: 10px;
+        }
+
+        .price {
+            margin: 10px;
+        }
+
+        .o-price {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .s-price {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .product-item button {
+            margin: 10px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-item button:hover {
+            background-color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-info {
+            max-width: 50%;
+        }
+
+        .footer-map iframe {
+            width: 300px;
+            height: 200px;
+            border: 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Thanh menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                <li>
+                    <a href="san-pham.html">Sản phẩm</a>
+                    <ul class="dropdown">
+                        <li><a href="noi-bep.html">Nồi</a></li>
+                        <li><a href="may-xay.html">Máy xay</a></li>
+                    </ul>
+                </li>
+                <li><a href="san-pham-hot.html">Sản phẩm hot</a></li>
+            </ul>
+            <form class="search-form" action="/tim-kiem" method="get">
+                <input type="text" name="q" placeholder="Tìm kiếm sản phẩm..." required>
+                <button type="submit">Tìm</button>
+            </form>
+            <div class="login-button">
+                <a href="dang-nhap.html">
+                    <img src="img/dang-nhap.png" alt="Đăng nhập" title="Đăng nhập">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Chào mừng đến với cửa hàng đồ gia dụng</h1>
+        <p>Khám phá những sản phẩm chất lượng cao cho gia đình bạn</p>
+    </section>
+
+    <!-- Danh sách sản phẩm -->
+    <section class="products">
+        <h2>Sản phẩm hot</h2>
+        <div class="product-list">
+            <a href="noichienkhongdau/noichien1.html" class="product-item">
+                <img src="img_index/noichien1.jpg" alt="Sản phẩm 1">
+                <h3>Nồi chiên không dầu Elmich 4.0L EDA-0827.</h3>
+                <p class="price">
+                    <div class="o-price"><s>2,789,000 VNĐ</s></div>
+                    <div class="s-price">1,599,000 VNĐ</div>
+                </p>
+                <button>Thêm vào giỏ</button>
+            </a>
+
+            <a href="may-xay/mayxay1.html" class="product-item">
+                <img src="img_index/mayxay1.png" alt="Sản phẩm 2">
+                <h3>Máy xay thịt Bear xay thực phẩm đa năng</h3>
+                <p class="price">
+                    <div class="o-price"><s>2,789,000 VNĐ</s></div>
+                    <div class="s-price">1,599,000 VNĐ</div>
+                </p>
+                <button>Thêm vào giỏ</button>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>NHÓM 4 - ĐẠI LÝ CẤP CHÍNH THỨC CỦA HÀNG GIA DỤNG TẠI HVNH</h3>
+                <p>Website: <a href="#" style="color: orange;">nhom4tkweb.com.vn</a></p>
+                <p>Fanpage: <a href="https://web.facebook.com/BAConfessions" target="_blank" style="color: orange;">Fanpage</a></p>
+                <p>HOTLINE: 0796 422 126</p>
+                <p>Email: nhom4tkweb@gmail.com</p>
+            </div>
+            <div class="footer-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!..." allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024, ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
